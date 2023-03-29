@@ -4,10 +4,29 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
+    <canvas class="webgl relative z-10">
+    </canvas>
+
+    <div class=" absolute top-0 flex justify-between text-xl w-full px-20 p-5 left-0 text-white z-50">
+      <div class="text-white font-bold">
+        Dev.
+      </div>
+      <div class="flex gap-x-14">
+        <div class="text-white">Home</div>
+        <div class="text-white">Projects</div>
+        <div class="text-white">About</div>
+      </div>
+    </div>
+
+
     <script type="module" src="/main.js"></script>
   </body>
 </html>
