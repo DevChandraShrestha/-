@@ -16,7 +16,7 @@ const mesh = new THREE.Mesh(geometry, material);
 scene.add(mesh);
 
 // mesh.position.x = 4;
-mesh.position.set( 5, 0, 0 );
+
 // light
 
 const light = new THREE.PointLight(0xffffff, 1, 100);
@@ -39,6 +39,9 @@ const camera = new THREE.PerspectiveCamera(
 camera.position.z = 20;
 scene.add(camera);
 
+mesh.position.set( 5, 0, 0 );
+camera.lookAt(0, 0, 0)
+
 const canvas = document.querySelector(".webgl");
 const renderer = new THREE.WebGLRenderer({ canvas });
 renderer.setSize(sizes.width, sizes.height);
@@ -53,14 +56,21 @@ window.addEventListener("resize", () => {
   renderer.setSize(sizes.width, sizes.height);
 });
 
+
+
 const controls = new OrbitControls(camera, canvas);
+controls.update();
 controls.enableDamping = true;
 controls.enablePan = false;
-controls.minDistance = 1;
 controls.enableZoom = false;
 controls.autoRotate = true;
 controls.autoRotateSpeed = 3;
 renderer.setPixelRatio = 5;
+
+controls.minPolarAngle = 0;
+controls.maxPolarAngle =  Math.PI * 0.5;
+
+
 
 const loop = () => {
   // mesh.rotation.x += 0.2
