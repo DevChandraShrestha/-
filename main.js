@@ -62,13 +62,12 @@ const controls = new OrbitControls(camera, canvas);
 controls.update();
 controls.enableDamping = true;
 controls.enablePan = false;
+controls.enableRotate= false;
 controls.enableZoom = false;
 controls.autoRotate = true;
 controls.autoRotateSpeed = 3;
 renderer.setPixelRatio = 5;
 
-controls.minPolarAngle = 0;
-controls.maxPolarAngle =  Math.PI * 0.5;
 
 
 
