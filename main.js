@@ -9,7 +9,7 @@ const scene = new THREE.Scene();
 const geometry = new THREE.SphereGeometry(3, 64, 64);
 
 const material = new THREE.MeshStandardMaterial({
-  color: "gold",
+  color: "red",
 });
 
 const mesh = new THREE.Mesh(geometry, material);
@@ -39,8 +39,8 @@ const camera = new THREE.PerspectiveCamera(
 camera.position.z = 20;
 scene.add(camera);
 
-mesh.position.set( 5, 0, 0 );
-camera.lookAt(0, 0, 0)
+// mesh.position.set( 5, 0, 0 ); 
+// camera.lookAt(0, 0, 0)
 
 const canvas = document.querySelector(".webgl");
 const renderer = new THREE.WebGLRenderer({ canvas });
@@ -62,7 +62,7 @@ const controls = new OrbitControls(camera, canvas);
 controls.update();
 controls.enableDamping = true;
 controls.enablePan = false;
-controls.enableRotate= false;
+// controls.enableRotate= false;
 controls.enableZoom = false;
 controls.autoRotate = true;
 controls.autoRotateSpeed = 3;
